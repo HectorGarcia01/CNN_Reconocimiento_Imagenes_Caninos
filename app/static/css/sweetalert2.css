@@ -1,0 +1,35 @@
+/* Estilos adicionales para hacer la alerta más pequeña en pantallas pequeñas */
+@media screen and (max-width: 480px) {
+    .custom-popup-class {
+        max-width: 300px;
+        width: 90%;
+    }
+
+    .custom-title-class {
+        font-size: 16px;
+    }
+
+    .custom-content-class {
+        font-size: 14px;
+    }
+}
+
+.custom-popup-class {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.custom-title-class {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.custom-content-class {
+    font-size: 16px;
+    color: #666;
+}
