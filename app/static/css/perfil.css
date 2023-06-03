@@ -1,0 +1,55 @@
+@media screen and (max-width: 480px) {
+    .container {
+        margin-top: 10vh;
+    }
+    
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    label {
+        margin-bottom: 5px;
+        width: 100%;
+    }
+    
+    input[type="text"],
+    input[type="email"] {
+        width: 100%;
+    }
+}
+
+body {
+    background: linear-gradient(to bottom right, #00a5c7, #007bff); /* Degradado de celeste a azul */
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 23vh;
+    padding: 20px;
+    background-color: #07f5fe;
+    border: 1px solid #000;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+label {
+    display: inline-block;
+    font-weight: bold;
+    width: 30%; /* Ancho del label */
+}
+
+input[type="text"],
+input[type="email"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
