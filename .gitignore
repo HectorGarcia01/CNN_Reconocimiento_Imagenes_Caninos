@@ -1,0 +1,7 @@
+/app/.env
+
+**/__pycache__/
+
+/app/utils/
+
+/src/Modelo_entrenado/modelo_felinos.h5
