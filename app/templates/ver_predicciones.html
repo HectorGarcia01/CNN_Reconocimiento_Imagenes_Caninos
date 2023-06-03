@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Predicción</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/ver_predicciones.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    </head>
+    <body>
+        {% include 'partials/_navbar.html' %}
+
+        <div class="container">
+            {% for prediccion in predicciones %}
+                <div class="card">
+                    <img src="{{ prediccion.imagen_prediccion }}" alt="Imagen de la predicción">
+                    <h3>Leon: {{ prediccion.porcentaje_leon }}%</h3>
+                    <h3>Gato: {{ prediccion.porcentaje_gato }}%</h3>
+                    <h3>Tigre: {{ prediccion.porcentaje_tigre }}%</h3>
+                    <h3>Pantera: {{ prediccion.porcentaje_pantera }}%</h3>
+                </div>
+            {% endfor %}
+        </div>
+        
+    </body>
+    <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+</html>
