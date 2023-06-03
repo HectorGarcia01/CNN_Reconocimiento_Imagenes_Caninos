@@ -33,7 +33,7 @@ def stringAleatorio():
 
 #Definimos una función para la predicción del modelo
 def realizar_prediccion(ruta_imagen):
-    longitud, altura = 224, 224 #para felinos
+    longitud, altura = 256, 256 #para caninos
 
     # Definimos la ruta del modelo
     ruta_base = os.path.dirname(os.path.abspath(__file__))
