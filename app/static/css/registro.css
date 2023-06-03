@@ -1,0 +1,91 @@
+body {
+    background: linear-gradient(to bottom right, #00a5c7, #007bff); /* Degradado de celeste a azul */
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto; /* Centrar horizontalmente */
+    margin-top: 12vh; /* Centrar verticalmente */
+    padding: 20px;
+    background: linear-gradient(to bottom right, #007bff, #00a5c7); /* Degradado de azul a celeste */
+    border-radius: 25px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+
+    /* Para la animación */
+    position: relative; 
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.116); /* Color de la animación */
+    animation: animacion_login 4s linear infinite;
+}
+
+@keyframes animacion_login {
+    0% {
+        top: -50px;
+        left: -50px;
+    }
+    100% {
+        top: calc(100% + 50px);
+        left: calc(100% + 50px);
+    }
+}
+
+h2 {
+    font-size: 35px;
+}
+
+p {
+    font-size: 20px;
+}
+
+input {
+    margin-bottom: 15px; /* Espacio entre los campos de entrada */
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo del campo de entrada */
+    font-size: 16px; /* Tamaño de letra */
+    transition: border-color 0.3s ease; /* Transición suave */
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #4CAF50; /* Borde verde */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.6); /* Sombra verde */
+}
+
+button {
+    margin-top: 15px; /* Espacio por encima del botón */
+    margin-bottom: 15px; /* Espacio por debajo del botón */
+    padding: 12px 20px; /* Aumento del espacio interno */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave */
+    font-size: 20px; /* Tamaño de letra */
+}
+
+button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el cursor */
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bolder;
+}
