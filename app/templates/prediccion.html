@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Predicción</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/prediccion.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+        {% include 'partials/_sweetAlert2.html' %} <!-- incluimos las etiquetas necesarias para utilzar sweetAlert2 -->
+    </head>
+    <body>
+        {% include 'partials/_navbar.html' %}
+
+        <div class="container">
+            <h2>Reconocimiento de imágenes con IA</h2>
+            {% if not ruta_img %}
+                <div class="contenedor-imagen">
+                    <form action="/prediccion/nueva_prediccion" method="POST" enctype="multipart/form-data">
+                        <!-- Campo para subir imagen -->
+                        <div class="contenedor-input">
+                            <label for="imagen-input" class="imagen-label">Inserte Imagen</label>
+                            <input id="imagen-input" type="file" name="imagen" accept=".png, .jpg, .jpeg" required>
+                            <!-- <img id="imagen-miniatura" src="#" alt="Miniatura de la imagen" /> -->
+                        </div>
+                        <button id="btnPredecir" type="submit">Realizar predicción</button>
+                    </form>
+                </div>
+            {% endif %}
+            {% if ruta_img %}
+                <div class="contenedor-imagen">
+                    <div>
+                        <img src="{{ ruta_img }}" alt="Predicción de la imagen" id="imagen-miniatura">
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class="contenedor-prediccion">
+                <h3>Resultado:</h3>
+                <div class="prediccion-item">
+                    <label for="leon-input">León</label>
+                    <div class="prediccion-nivel">
+                        <span id="nivel_leon" class="nivel"></span>
+                    </div>
+                    <span id="leon" class="prediccion-porcentaje">{{ porcentaje_leon }}%</span>
+                </div>
+                <div class="prediccion-item">
+                    <label for="gato-input">Gato</label>
+                    <div class="prediccion-nivel">
+                        <span id="nivel_gato" class="nivel"></span>
+                    </div>
+                    <span id="gato" class="prediccion-porcentaje">{{ porcentaje_gato }}%</span>
+                </div>
+                <div class="prediccion-item">
+                    <label for="tigre-input">Tigre</label>
+                    <div class="prediccion-nivel">
+                        <span id="nivel_tigre" class="nivel"></span>
+                    </div>
+                    <span id="tigre" class="prediccion-porcentaje">{{ porcentaje_tigre }}%</span>
+                </div>
+                <div class="prediccion-item">
+                    <label for="pantera-input">Pantera</label>
+                    <div class="prediccion-nivel">
+                        <span id="nivel_pantera" class="nivel"></span>
+                    </div>
+                    <span id="pantera" class="prediccion-porcentaje">{{ porcentaje_pantera }}%</span>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/predecir.js') }}"></script>
+</html>
