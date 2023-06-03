@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registro</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/registro.css') }}">
+        {% include 'partials/_sweetAlert2.html' %} <!-- incluimos las etiquetas necesarias para utilzar sweetAlert2 -->
+    </head>
+    <body>
+        <div class="container">
+            <h2>Registro de usuario</h2>
+            <form action="/registro/nuevo_usuario" method="POST">
+                <!-- Campos para el registro de un nuevo usuario -->
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="text" name="apellido" placeholder="Apellido" required>
+                <input type="text" name="direccion" placeholder="Dirección" required>
+                <input type="email" name="correo" placeholder="Correo electrónico" required>
+                <input type="password" name="password" placeholder="password" required>
+                <button type="submit">Crear usuario</button>
+            </form>
+            <p>¿Ya tienes una cuenta? <a href="{{ url_for('usuario.login') }}">Iniciar sesión</a></p>
+        </div>
+
+        <!-- Obtenemos el mensaje enviado desde el controlador -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <script>
+                    //Guardamos el mensaje para utilizarlo en otro js
+                    var mensaje_exitoso = "{{ messages[0] }}";
+                </script>
+                <script src="{{ url_for('static', filename='js/alerta_exitosa.js') }}"></script>
+            {% endif %}
+        {% endwith %}
+    </body>
+</html>
