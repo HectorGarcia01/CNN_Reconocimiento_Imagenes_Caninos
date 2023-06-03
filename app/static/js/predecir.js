@@ -1,14 +1,14 @@
 //Obtenemos los datos de cada predicción
-const leon = document.getElementById('leon').textContent;
-const gato = document.getElementById('gato').textContent;
-const tigre = document.getElementById('tigre').textContent;
-const pantera = document.getElementById('pantera').textContent;
+const leon = document.getElementById('coyote').textContent;
+const gato = document.getElementById('lobo').textContent;
+const tigre = document.getElementById('perro').textContent;
+const pantera = document.getElementById('zorro').textContent;
 
 //LLenamos el div de porcentaje según el porcentaje de prediccion
-document.getElementById('nivel_leon').style.width = leon;
-document.getElementById('nivel_gato').style.width = gato;
-document.getElementById('nivel_tigre').style.width = tigre;
-document.getElementById('nivel_pantera').style.width = pantera;
+document.getElementById('nivel_coyote').style.width = leon;
+document.getElementById('nivel_lobo').style.width = gato;
+document.getElementById('nivel_perro').style.width = tigre;
+document.getElementById('nivel_zorro').style.width = pantera;
 
 //Obtener referencia al botón de realizar predicción
 const botonRealizarPrediccion = document.getElementById('btnPredecir');
